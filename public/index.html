@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReplyWise - Email Reply Helper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top navigation bar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">Reply<span>Wise</span></a>
+      <nav>
+        <a href="#how-it-works">How it works</a>
+        <a href="#try-it" class="nav-button">Try it</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Landing page hero section -->
+    <section class="hero">
+      <div class="container">
+        <p class="badge">Student Project - Version 1</p>
+        <h1>Write professional email replies with less stress</h1>
+        <p class="hero-text">
+          Paste an email you received, choose a tone, and get a sample reply
+          you can edit and make your own.
+        </p>
+        <a href="#try-it" class="btn btn-primary">Get started</a>
+      </div>
+    </section>
+
+    <!-- How it works section -->
+    <section class="how" id="how-it-works">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="steps">
+          <div class="step-card">
+            <span class="step-number">1</span>
+            <h3>Paste your email</h3>
+            <p>Copy the email you received and paste it into the box.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">2</span>
+            <h3>Pick a tone</h3>
+            <p>Choose Professional, Friendly, Apologetic, or Confident.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-number">3</span>
+            <h3>Get a sample reply</h3>
+            <p>Read the sample, then edit it to fit your situation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main tool section -->
+    <section class="tool" id="try-it">
+      <div class="container">
+        <h2>Try ReplyWise</h2>
+
+        <div class="tool-card">
+
+          <label for="emailInput" class="field-label">1. Paste the email you received</label>
+          <textarea
+            id="emailInput"
+            rows="8"
+            placeholder="Paste the email here..."
+          ></textarea>
+
+          <p class="field-label">2. Choose a tone</p>
+          <div class="tone-options" id="toneOptions">
+            <label class="tone-pill">
+              <input type="radio" name="tone" value="professional" checked>
+              <span>Professional</span>
+            </label>
+            <label class="tone-pill">
+              <input type="radio" name="tone" value="friendly">
+              <span>Friendly</span>
+            </label>
+            <label class="tone-pill">
+              <input type="radio" name="tone" value="apologetic">
+              <span>Apologetic</span>
+            </label>
+            <label class="tone-pill">
+              <input type="radio" name="tone" value="confident">
+              <span>Confident</span>
+            </label>
+          </div>
+          <label for="goalSelect" class="field-label">3. What do you want to say?</label>
+          <select id="goalSelect">
+          <option value="general">General reply</option>
+          <option value="accept">Accept</option>
+          <option value="decline">Decline</option>
+          <option value="moretime">Ask for more time</option>
+          <option value="thanks">Say thanks</option>
+          </select>
+           <p id="errorMessage" class="error" role="alert"></p>
+
+          <button id="createReplyBtn" class="btn btn-primary" type="button">
+            Create sample reply
+          </button>
+        </div>
+
+        <!-- Reply area (hidden until the button is clicked) -->
+        <div class="reply-card" id="replyCard" hidden>
+          <div class="reply-header">
+            <h3>Sample reply</h3>
+            <span class="reply-tag" id="replyTag"></span>
+          </div>
+          <p class="reply-note">
+            This is a template-based sample, not AI-generated.
+            Please edit it before sending.
+          </p>
+          <pre id="replyOutput" class="reply-output"></pre>
+
+          <div class="reply-actions">
+           <button id="copyBtn" class="btn btn-secondary" type="button">
+            Copy reply
+           </button>
+           <span id="copyStatus" class="copy-status" role="status"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>ReplyWise - a student project. Sample replies are made from fixed templates.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
