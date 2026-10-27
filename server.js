@@ -4,7 +4,7 @@ const path = require("path");
 
 // Step 2: Create the app and choose a port number
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Step 3: Middleware (code that runs on every request)
 app.use(express.json());
